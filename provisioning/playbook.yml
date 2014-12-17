@@ -1,0 +1,9 @@
+- hosts: all
+  sudo: True
+  vars:
+    # root password = "unifi"
+    - root_password: '$6$KCdCcMoj$DLdeFjXTivfhDgNsETkdlAsJjcDh.oKNmV7lDbQS7ZiFP7sO.e2QeP/jJgAJYwvZaS5r4Lmp.C18kQfAw5czj1'
+
+  roles:
+    - { role: common, root_password: "{{ root_password }}" }
+    - { role: unifi, version: stable}

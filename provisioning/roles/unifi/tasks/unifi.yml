@@ -1,0 +1,20 @@
+- name: add unifi repo key
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x06E85760C0A52C50 state=present
+  tags:
+    - unifi
+
+- name: add unifi repository
+  apt_repository: repo='deb http://www.ubnt.com/downloads/unifi/distros/deb/debian debian ubiquiti' state=present
+  tags:
+    - unifi
+
+- name: unifi installation
+  apt: pkg=unifi state=present
+  tags:
+    - unifi
+
+- name: change JAVA_HOME environment variable
+  lineinfile: dest=/etc/init.d/unifi regexp=^JAVA_HOME= line=JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+
+- name: restart unifi service
+  service: name=unifi state=restarted

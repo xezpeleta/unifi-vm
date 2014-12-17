@@ -1,0 +1,7 @@
+# file: common/tasks/delete-packages.yml
+
+- name: delete packages
+  apt: pkg={{ item }} state=absent
+  with_items:
+    - puppet
+    - puppet-common

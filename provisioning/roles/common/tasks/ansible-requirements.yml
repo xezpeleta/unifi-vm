@@ -1,0 +1,8 @@
+# file: common/tasks/ansible_requirements.yml
+
+- name: requirements
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - python-mysqldb
+    - python-pycurl
+    - debconf-utils

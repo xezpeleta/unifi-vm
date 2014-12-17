@@ -1,0 +1,5 @@
+- name: change hostname
+  hostname: name=unifi
+
+- name: add new hostname in /etc/hosts
+  lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 localhost unifi'
