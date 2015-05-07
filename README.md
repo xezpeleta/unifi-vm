@@ -6,7 +6,7 @@ This project will help you deploying UniFi controller in a VirtualBox VM.
 ## Required
  - VirtualBox 4.3 or greater
  - Vagrant 1.6 or greater
- - Ansible 1.7
+ - Ansible 1.7 or greater
 
 ## Instructions
 
