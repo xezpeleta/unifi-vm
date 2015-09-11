@@ -4,7 +4,7 @@
     - unifi
 
 - name: add unifi repository
-  apt_repository: repo='deb http://www.ubnt.com/downloads/unifi/distros/deb/debian debian ubiquiti' state=present
+  apt_repository: repo='deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti' state=present
   tags:
     - unifi
 
